@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class StudentController extends Controller
 {
@@ -25,20 +27,30 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         // return $request->all();
-        $students = new Student();
-        $request->validate([
-            'cne' => 'required|unique:students',
-            // 'image' => 'image|mimes:jpeg,png,jpg|max:2048',
+
+        // $request->validate([
+        //     'cne' => 'required|unique:students',
+        //     //  'image' => 'image|mimes:jpeg,png,jpg',
            
-        ]);
+        // ]);
+        $students = new Student();
         $students->cne = $request->post('cne');
         $students->firstName = $request->post('firstName');
         $students->lastName = $request->post('lastName');
         $students->age = $request->post('age');
         $students->speciality = $request->post('speciality');
-        // return $students;
-        // exit();
+        
+         if($request->hasfile('image')){
+             $image = $request->file('image');
+             $ext = $image->extension();
+             $image_name = time().'.'.$ext;
+             $image->storeAs('/public/media',$image_name);
+             $students->image = $image_name;
+         }
+       
+        
         $students->save();
+        
         return redirect('/');
     }
 
@@ -74,7 +86,7 @@ class StudentController extends Controller
             $image = $request->file('image');
             $ext = $image->extension();
             $image_name = time().'.'.$ext;
-            $image->storeAs('/public/media/brand',$image_name);
+            $image->storeAs('/public/media',$image_name);
             $student->image=$image_name;
         }
         $student->save();
@@ -82,11 +94,12 @@ class StudentController extends Controller
     }
 
     
-    public function destroy($id)
+    public function delete($id)
     {
         $student = Student::find($id);
 
         $student->delete();
         return redirect('/');
+        // return view('student',['students'=>$students, 'student'=>$student, 'layout'=>'show']);
     }
 }
