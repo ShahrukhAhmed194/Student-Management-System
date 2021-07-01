@@ -28,17 +28,17 @@ class StudentController extends Controller
     {
         // return $request->all();
 
-        // $request->validate([
-        //     'cne' => 'required|unique:students',
+     $request->validate([
+             'cne' => 'required|unique:students,cne',
         //     //  'image' => 'image|mimes:jpeg,png,jpg',
            
-        // ]);
+         ]);
         $students = new Student();
         $students->cne = $request->post('cne');
-        $students->firstName = $request->post('firstName');
-        $students->lastName = $request->post('lastName');
+        $students->name = $request->post('name');
+        $students->email = $request->post('email');
         $students->age = $request->post('age');
-        $students->speciality = $request->post('speciality');
+        $students->department = $request->post('department');
         
          if($request->hasfile('image')){
              $image = $request->file('image');
@@ -78,10 +78,10 @@ class StudentController extends Controller
 
         $student = Student::find($id);
         $student->cne = $request->input('cne');
-        $student->firstName = $request->input('firstName');
-        $student->lastName = $request->input('lastName');
+        $student->name = $request->input('name');
+        $student->email = $request->input('email');
         $student->age = $request->input('age');
-        $student->speciality = $request->input('speciality');
+        $student->department = $request->input('department');
         if($request->hasfile('image')){
             $image = $request->file('image');
             $ext = $image->extension();

@@ -52,20 +52,20 @@
                             <input type="text" name="cne" class="form-control" placeholder="Enter CNE">
                         </div>
                         <div class="form-group">
-                            <label>Firest Name</label>
-                            <input type="text" name="firstName" class="form-control" placeholder="Enter First Name">
+                            <label>Name</label>
+                            <input type="text" name="name" class="form-control" placeholder="Enter Name">
                         </div>
                         <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text" name="lastName" class="form-control" placeholder="Enter Last Name">
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Enter Email">
                         </div>
                         <div class="form-group">
                             <label>Age</label>
-                            <input type="text" name="age" class="form-control" placeholder="Enter Age">
+                            <input type="number" name="age" class="form-control" placeholder="Enter Age">
                         </div>
                         <div class="form-group">
-                            <label>Speciality</label>
-                            <input type="text" name="speciality" class="form-control" placeholder="Enter Speciality">
+                            <label>Department</label>
+                            <input type="text" name="department" class="form-control" placeholder="Enter Department">
                         </div>
                         <div class="form-group">
                             <label>Image</label>
@@ -108,20 +108,20 @@
                                 <input type="text" name="cne" value="{{$student->cne}}"class="form-control" placeholder="Enter CNE">
                             </div>
                             <div class="form-group">
-                                <label>Firest Name</label>
-                                <input type="text" name="firstName" value="{{$student->firstName}}" class="form-control" placeholder="Enter First Name">
+                                <label>Name</label>
+                                <input type="text" name="name" value="{{$student->name}}" class="form-control" placeholder="Enter Name">
                             </div>
                             <div class="form-group">
-                                <label>Last Name</label>
-                                <input type="text" name="lastName" value="{{$student->lastName}}" class="form-control" placeholder="Enter Last Name">
+                                <label>Email</label>
+                                <input type="email" name="email" value="{{$student->email}}" class="form-control" placeholder="Enter Email">
                             </div>
                             <div class="form-group">
                                 <label>Age</label>
-                                <input type="text" name="age" value="{{$student->age}}" class="form-control" placeholder="Enter Age">
+                                <input type="number" name="age" value="{{$student->age}}" class="form-control" placeholder="Enter Age">
                             </div>
                             <div class="form-group">
-                                <label>Speciality</label>
-                                <input type="text" name="speciality" value="{{$student->speciality}}" class="form-control" placeholder="Enter Speciality">
+                                <label>Department</label>
+                                <input type="text" name="department" value="{{$student->department}}" class="form-control" placeholder="Enter Department">
                             </div>
                             <div class="form-group">
                                 <label>Image</label>

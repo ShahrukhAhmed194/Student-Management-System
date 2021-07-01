@@ -9,10 +9,10 @@
       <tr>
         <th scope="col">Image</th>
         <th scope="col">CNE</th>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
         <th scope="col">Age</th>
-        <th scope="col">Speciality</th>
+        <th scope="col">Department</th>
         <th scope="col">Operation</th>
       </tr>
     </thead>
@@ -22,10 +22,10 @@
           <!-- <td>{{$student->image}}</td> -->
           <td><img width="100px" src="{{asset('storage/media')}}/{{$student->image}}" /></td>  
           <td>{{$student->cne}}</td>
-          <td>{{$student->firstName}}</td>
-          <td>{{$student->lastName}}</td>
+          <td>{{$student->name}}</td>
+          <td>{{$student->email}}</td>
           <td>{{$student->age}}</td>
-          <td>{{$student->speciality}}</td>
+          <td>{{$student->department}}</td>
           <td>
           <a href="{{route('delete',$student->id)}}" class="btn btn-sm btn-danger">Delete</a>
           <a href="{{route('edit',$student->id)}}" class="btn btn-sm btn-warning">Edit</a>
